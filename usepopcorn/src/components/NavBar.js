@@ -1,9 +1,4 @@
-import { useState } from "react";
-
-export default function NavBar({ tempMovieData }) {
-  const [query, setQuery] = useState("");
-  const [movies, setMovies] = useState(tempMovieData);
-
+export default function NavBar({ tempMovieDataLength, query, setQuery }) {
   return (
     <nav className="nav-bar">
       <div className="logo">
@@ -20,7 +15,9 @@ export default function NavBar({ tempMovieData }) {
       />
 
       <p className="num-results">
-        Found <strong>{movies.length}</strong> results
+        {tempMovieDataLength > 0
+          ? `Found ${tempMovieDataLength} results`
+          : `Found 0 results`}
       </p>
     </nav>
   );

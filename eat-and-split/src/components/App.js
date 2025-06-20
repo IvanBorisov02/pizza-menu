@@ -114,6 +114,7 @@ export default function App() {
           payingCustomer={payingCustomer}
           setPayingCustomer={setPayingCustomer}
           handleSplit={handleSplit}
+          key={friends.map((friend) => friend.name === friendName)[0].id}
         />
       )}
     </div>

@@ -1,9 +1,12 @@
 import Movie from "./Movie";
 import { useState } from "react";
 
-export default function Movies({ tempMovieData }) {
+export default function Movies({
+  tempMovieData,
+  selectedId,
+  handleSelectMovie,
+}) {
   const [isOpen1, setIsOpen1] = useState(true);
-  const [movies, setMovies] = useState(tempMovieData);
 
   return (
     <div className="box">
@@ -15,8 +18,12 @@ export default function Movies({ tempMovieData }) {
       </button>
       {isOpen1 && (
         <ul className="list">
-          {movies?.map((movie) => (
-            <Movie movie={movie} key={movie.imdbID} />
+          {tempMovieData?.map((movie) => (
+            <Movie
+              movie={movie}
+              key={movie.imdbID}
+              handleSelectMovie={handleSelectMovie}
+            />
           ))}
         </ul>
       )}

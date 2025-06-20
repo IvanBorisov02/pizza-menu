@@ -1,3 +1,3 @@
-export default function Main({ tempMovieData, tempWatchedData, children }) {
+export default function Main({ children }) {
   return <main className="main">{children}</main>;
 }
